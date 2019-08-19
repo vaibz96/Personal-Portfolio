@@ -1,0 +1,99 @@
+<!doctype html>
+
+<html lang="en">
+{% load static %}
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v3.8.5">
+
+  <title>Vaibhav Shanbhag</title>
+  <link rel="icon" href="{% static 'Dragonball-Goku.ico'%}">
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+
+  <!-- font awesome kit -->
+  <script src="https://kit.fontawesome.com/8fd37525f4.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+  <!-- Custom styles for this template -->
+  <!-- <link href="album.css" rel="stylesheet"> -->
+
+</head>
+
+<body>
+  <main role="main">
+
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">Vaibhav Shanbhag</h1>
+        <p class="lead text-muted">Proven Ability to leverage full-stack knowledge and experience to build interactive web applications designed to scale</p>
+        <p>
+          <a href="mailto:vshanbha@stevens.edu" class="btn btn-success my-2"><span><i class="fas fa-at"></i> </span> E-mail Me </a>
+          <a href="https://github.com/vaibz96" class="btn btn-dark my-2"><span><i class="fab fa-github"></i> </span> GitHub </a>
+          <a href="https://www.linkedin.com/in/vs16/" class="btn btn-primary my-2"><span><i class="fab fa-linkedin"></i> </span> LinkedIn </a>
+          <a download href="{% static 'Resume.pdf' %}" class="btn btn-info my-2"><span><i class="far fa-file"></i> </span> Resume </a>
+        </p>
+        <img src="{% static 'Capture.PNG' %}" height=200 style="border-radius : 100%;">
+      </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          {% for job in jobs.all %}
+          <div class="col-md-4">
+            <a href="{% url 'detail' job.id %}">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" src="{{ job.image.url }}" height=150>
+                <div class="card-body">
+                  <p class="card-text">{{ job.summary }}</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="text-muted">
+    <div class="">
+      <p class="float-left">
+        @copyright vshanapppanda.com
+      </p>
+    </div>
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Back to top</a>
+      </p>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
